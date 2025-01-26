@@ -1,0 +1,16 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: cart-web
+  description: The place to be, for great artists
+spec:
+  type: website
+  lifecycle: development
+  owner: vikash
+  system: cart-app-portal
+  dependsOn:
+    - resource:default/cart-db
+  dependencyOf:
+    - component:default/cart-web-lookup
+  providesApis:
+    - cart-api
